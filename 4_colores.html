@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style></style>
+</head>
+
+<body>
+    <p>Click en un color para cambiar el fondo a negro</p>
+ <article style="display: flex;">
+    <div id="azul" style="width: 200px; height: 200px; background-color: blue"></div>
+    <div id="rojo" style="width: 200px; height: 200px; background-color: red"></div>
+    <div id="verde" style="width: 200px; height: 200px; background-color: green"></div>
+    <div id="amarillo" style="width: 200px; height: 200px; background-color: yellow"></div>
+ </article>
+
+    <p>Cambiar el fondo a color con teclas a, s, d</p>
+    <div id="key" style="width: 200px; height: 200px; background-color: white; border: 2px solid black"></div> <br>
+
+
+
+    <script>
+    //Funcion para cambiar fondo a negro
+        function cambiarfondo(){
+            this.style.backgroundColor = "black";}
+
+        document.getElementById("azul").addEventListener("click", cambiarfondo);
+        document.getElementById("rojo").addEventListener("click", cambiarfondo);    
+        document.getElementById("verde").addEventListener("click", cambiarfondo);
+        document.getElementById("amarillo").addEventListener("click", cambiarfondo);
+
+
+        //Funcion para cambiar fondo con teclas
+        let color
+
+        document.addEventListener("keydown", function (event) {
+            if (event.key === "a") {
+                color = "pink";
+                key.style.backgroundColor = color;
+            } else if (event.key === "s") {
+                color = "orange";
+                key.style.backgroundColor = color;
+            } else if (event.key === "d") {
+                color = "lightblue";
+                key.style.backgroundColor = color;
+            }
+
+        //crear divs con teclas
+            else if (event.key === "q") {
+                color = "purple";
+                crearDivs(color);
+            }else if (event.key === "w") {
+                color = "grey";
+                crearDivs(color);
+            }else if (event.key === "e") {
+                color = "brown";
+                crearDivs(color);
+            }
+ 
+        //crear divs
+        function crearDivs(){
+            let div = document.createElement("div");
+            div.style.width = "200px";
+            div.style.height = "200px";
+            div.style.backgroundColor = color;
+            div.style.border = "2px solid black";
+            document.body.appendChild(div);
+        }
+        });
+
+    </script>
+</body>
+</html>
